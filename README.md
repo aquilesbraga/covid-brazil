@@ -41,7 +41,6 @@ Análise exploratória de dados simulados com perfil clínico de pacientes hospi
 
 ## Principais insights
 
-> *Análise pendente — os resultados serão gerados após a execução do notebook.*
 
 Os insights esperados incluem:
 
@@ -51,6 +50,3 @@ Os insights esperados incluem:
 4. Associação entre internação em UTI e desfecho
 5. Significância estatística das diferenças observadas
 
-## Sobre o autor
-
-Analista de dados em transição de carreira, com formação e experiência prévia na área da saúde. Esta análise combina o conhecimento clínico com ferramentas de ciência de dados para gerar insights relevantes para a saúde pública.
