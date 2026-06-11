@@ -1,52 +1,41 @@
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
-
 # Perfil Clínico de Mortalidade por COVID-19 no Brasil
 
-Análise exploratória de dados simulados com perfil clínico de pacientes hospitalizados por COVID-19 no Brasil, investigando os fatores associados ao risco de óbito.
+Análise exploratória de dados simulados com perfil clínico de pacientes hospitalizados por COVID-19, investigando os fatores associados ao risco de óbito.
 
-## Pergunta de negócio
+## 1. Objetivo do Projeto
 
-**Quais fatores clínicos e demográficos mais influenciam a mortalidade por COVID-19?**
+Responder à pergunta: **"Quais fatores clínicos e demográficos mais influenciam a mortalidade por COVID-19?"** A partir de dados realistas simulados de 5.000 pacientes, o projeto investiga como idade, sexo, comorbidades (diabetes, cardiopatia, obesidade, doença respiratória) e internação em UTI se associam ao risco de óbito. A análise busca gerar evidências que possam orientar políticas públicas e alocação de recursos hospitalares.
 
-## Tecnologias utilizadas
+## 2. Resultado Obtido
 
-- Python 3.10+
-- Pandas
-- NumPy
-- Plotly (visualização interativa)
-- SciPy (teste estatístico qui-quadrado)
-- Jupyter Notebook
+Um notebook Jupyter completo com:
+- **Geração de dados sintéticos** calibrados para refletir padrões epidemiológicos reais (mortalidade crescente com idade, maior risco em homens e portadores de comorbidades)
+- **Quatro visualizações interativas** com Plotly: taxa de mortalidade por faixa etária, impacto de cada comorbidade, análise por sexo e faixa etária, e associação com internação em UTI
+- **Teste estatístico qui-quadrado** (SciPy) confirmando associação significativa entre presença de comorbidades e maior mortalidade (p < 0,05)
+- **Cinco conclusões principais** sintetizadas em linguagem clara para tomadores de decisão
 
-## Como executar
+## 3. Ferramentas Utilizadas
 
-1. Clone o repositório e acesse a pasta do projeto:
-   ```bash
-   git clone https://github.com/seu-usuario/covid-clinical-profile-brazil.git
-   cd covid-clinical-profile-brazil
-   ```
+- **Python 3.10+** — linguagem principal
+- **Pandas** — manipulação, agregação e tabulação cruzada dos dados
+- **NumPy** — geração dos dados sintéticos (distribuições binomial, choice, randint) e modelagem logística
+- **Plotly** (Express + Graph Objects) — visualizações interativas com barras e gradientes de cor
+- **SciPy** — teste qui-quadrado de independência (`chi2_contingency`)
+- **Jupyter Notebook** — ambiente de desenvolvimento e documentação
 
-2. Crie um ambiente virtual e instale as dependências:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate   # Linux/macOS
-   # ou
-   venv\Scripts\activate      # Windows
-   pip install -r requirements.txt
-   ```
+## 4. O que Aprendi
 
-3. Execute o notebook:
-   ```bash
-   jupyter notebook notebooks/analysis.ipynb
-   ```
+- Simular conjuntos de dados realistas usando numpy com calibração baseada em conhecimento do domínio (modelo logístico para probabilidade de óbito)
+- Construir uma narrativa analítica completa: da pergunta de negócio → geração dos dados → exploração visual → teste estatístico → conclusões acionáveis
+- Aplicar e interpretar o teste qui-quadrado de independência, incluindo a comunicação do significado do p-valor em linguagem acessível
+- Criar visualizações comparativas eficazes com Plotly (barras agrupadas, gradientes de cor, hover interactions)
+- Documentar o raciocínio analítico em cada etapa do notebook, conectando os achados à literatura científica sobre COVID-19
 
-## Principais insights
+## 5. Melhorias Futuras
 
-
-Os insights esperados incluem:
-
-1. Relação entre faixa etária e taxa de mortalidade
-2. Impacto de comorbidades no risco de óbito
-3. Diferença de mortalidade entre sexos
-4. Associação entre internação em UTI e desfecho
-5. Significância estatística das diferenças observadas
-
+- Substituir dados simulados por dados reais do SIVEP-Gripe (SRAG) para validar os achados
+- Incorporar análise temporal (séries históricas por onda da pandemia)
+- Desenvolver um modelo preditivo de risco individual (regressão logística ou random forest)
+- Incluir análise por região geográfica e disponibilidade de leitos de UTI
+- Criar um dashboard interativo com Streamlit para explorar os dados dinamicamente
+- Expandir para outras variáveis: raça/cor, escolaridade, vacinação
